@@ -17,7 +17,7 @@ options = webdriver.ChromeOptions()
 options.add_argument("--user-data-dir=" + chrome_user_data_path)
 driver = webdriver.Chrome(service=service, options=options)
 
-# Navigate to the Google Maps page for Vilamoura, Portugal
+# Navigate to the Google Search page
 driver.get("https://www.google.com/search?q=vilamore")
 
 # Wait for the page to load
