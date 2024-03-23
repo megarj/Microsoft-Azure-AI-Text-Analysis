@@ -139,27 +139,6 @@ Pontuações gerais: positivo=0.84; neutro=0.16; negativo=0.01
 
 Principais frases: centro histórico, São Paulo, preço, Vinicius Viana, Local Guide, comentários, estúdios, body piercing, segurança, 544 fotos, NOVA, parada, turismo, ambiente, coisa, tatuagem, qualidade, visita
 ```
-
-## Recursos do Azure Text Analytics
-
-| Recurso                               | Descrição                                                                 |
-|---------------------------------------|---------------------------------------------------------------------------|
-| Analyze Sentiment                     | Analisa o sentimento do texto.                                            |
-| Recognize Entities                    | Reconhece e categoriza entidades no texto.                                |
-| Recognize Linked Entities             | Reconhece e vincula entidades a mais informações na web.                  |
-| Recognize PII Entities                | Reconhece entidades de informações pessoalmente identificáveis (PII).    |
-| Extract Key Phrases                   | Extrai palavras-chave e frases do texto.                                  |
-| Detect Language                       | Detecta o idioma do texto fornecido.                                      |
-| Healthcare Entities Analysis          | Analisa entidades relacionadas à saúde no texto.                          |
-| Multiple Analysis                     | Realiza várias análises em um único pedido.                               |
-| Custom Entity Recognition             | Reconhece entidades personalizadas no texto.                              |
-| Custom Single Label Classification    | Classifica o texto em uma única categoria personalizada.                  |
-| Custom Multi Label Classification     | Classifica o texto em várias categorias personalizadas.                   |
-| Extractive Summarization              | Extrai as frases mais relevantes do texto.                                |
-| Abstractive Summarization             | Gera um resumo abstrato do texto.                                         |
-
-Para mais exemplos de como utilizar esses recursos, consulte a [documentação oficial da API Azure Text Analytics](https://learn.microsoft.com/en-us/python/api/overview/azure/ai-textanalytics-readme?view=azure-python&preserve-view=true#get-the-api-key).
-
 ## Recursos do Azure Text Analytics
 
 | Recurso                               | Descrição                                                                 |
