@@ -86,5 +86,24 @@ for company in companies:
 # Fechando o navegador
 driver.quit()
 
+# Lista todos os arquivos na pasta 'inputs'
+input_files = os.listdir('inputs')
+
+# Para cada arquivo na pasta 'inputs'
+for file in input_files:
+    # Remove a extensão do nome do arquivo
+    base_name = os.path.splitext(file)[0]
+
+    # Verifica se o arquivo não começa com 'analise_'
+    if not base_name.startswith('analise_'):
+        # Verifica se existe um arquivo correspondente na pasta 'inputs'
+        if not os.path.exists(f'inputs/analise_{base_name}.txt'):
+            try:
+                # Se não, executa a análise de texto
+                text_analysis.main(base_name + '.txt')
+            except Exception as e:
+                # Se ocorrer um erro ao realizar a análise de texto, imprime uma mensagem com o motivo do erro
+                print(f"Falha ao realizar análise de texto para {base_name}. Motivo: {str(e)}")
+
 # Imprimindo uma mensagem para informar que todas as análises de texto foram concluídas
 print("Todas as análises de texto foram concluídas.")

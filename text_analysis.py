@@ -66,39 +66,39 @@ def analyze_text(client: TextAnalyticsClient, documents: list):
     
     # Retornando o resultado
     return result
-
-def main():
+def main(filename):
     # Autenticando o cliente
     client = authenticate_client()
     
-    # Para cada arquivo na pasta 'inputs'
-    for filename in os.listdir('inputs'):
-        # Se o arquivo for um arquivo de texto
-        if filename.endswith('.txt'):
-            print(f"Processando análise de texto para {filename}...")
-            
-            # Abrindo o arquivo para leitura
-            with open(os.path.join('inputs', filename), 'r', encoding='utf-8') as file:
-                # Lendo o texto do arquivo
-                text = file.read()
-            
-            comments = text.split('---\n')
-            
-            # Abrindo um novo arquivo para escrita
-            with open(os.path.join('inputs', 'analise_' + filename), 'w', encoding='utf-8') as file:
-                # Para cada comentário
-                for comment in comments:
-                    # Se o comentário não estiver vazio
-                    if comment.strip():
-                        # Analisando o comentário
-                        result = analyze_text(client, [comment])
-                        
-                        # Escrevendo o comentário original no arquivo
-                        file.write(comment)
-                        
-                        # Escrevendo a análise no arquivo
-                        file.write('\n'.join(result))
-                        file.write('\n---\n')
+    # Verifica se existe um arquivo de análise correspondente
+    if os.path.exists(f'inputs/analise_{filename}'):
+        print(f"Análise de texto para {filename} já foi realizada.")
+        return
+
+    print(f"Processando análise de texto para {filename}...")
+    
+    # Abrindo o arquivo para leitura
+    with open(os.path.join('inputs', filename), 'r', encoding='utf-8') as file:
+        # Lendo o texto do arquivo
+        text = file.read()
+    
+    comments = text.split('---\n')
+    
+    # Abrindo um novo arquivo para escrita
+    with open(os.path.join('inputs', 'analise_' + filename), 'w', encoding='utf-8') as file:
+        # Para cada comentário
+        for comment in comments:
+            # Se o comentário não estiver vazio
+            if comment.strip():
+                # Analisando o comentário
+                result = analyze_text(client, [comment])
+                
+                # Escrevendo o comentário original no arquivo
+                file.write(comment)
+                
+                # Escrevendo a análise no arquivo
+                file.write('\n'.join(result))
+                file.write('\n---\n')
 
 # Chamando a função principal
 if __name__ == "__main__":
