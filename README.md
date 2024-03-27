@@ -96,21 +96,23 @@ Essas instruções criam e ativam um ambiente virtual Python no respectivo siste
 
 Este projeto pode ser usado de duas maneiras:
 
-1. **Se você já tem o texto a ser analisado:** Coloque o arquivo de texto (ou arquivos, se tiver mais de um) na pasta `inputs` e execute o seguinte comando:
-
-   ```bash
-   python text_analysis.py
-   ```
-
-   Isso irá analisar o texto e salvar um novo arquivo em `inputs` com o prefixo `analise_` seguido pelo nome do arquivo de texto original. Por exemplo, se o arquivo de texto original se chama `meu_texto.txt`, o arquivo de análise será `analise_meu_texto.txt`.
-
-2. **Se você quer coletar avaliações do Google e analisá-las:** Execute o seguinte comando:
+1. **Se você quer coletar avaliações do Google e analisá-las:** Execute o seguinte comando:
 
    ```bash
    python main.py
    ```
 
+   **Digite a opção 1**   
    Quando solicitado, digite uma lista de empresas para pesquisar, separadas por vírgulas. O script irá coletar as avaliações do Google Meu Negócio para cada empresa, salvar as avaliações apenas da primeira página aberta para fins de testes em arquivos de texto na pasta `inputs`, analisar as avaliações e salvar os resultados da análise em novos arquivos com o prefixo `analise_`.
+
+2. **Se você já tem o texto a ser analisado:** Coloque o arquivo de texto (ou arquivos, se tiver mais de um) na pasta `inputs` e execute o seguinte comando:
+
+   ```bash
+   python main.py
+   ```
+
+   **Digite a opção 2**   
+   Isso irá analisar o texto e salvar um novo arquivo em `inputs` com o prefixo `analise_` seguido pelo nome do arquivo de texto original. Por exemplo, se o arquivo de texto original se chama `meu_texto.txt`, o arquivo de análise será `analise_meu_texto.txt`.
 
 ⚠️ **Atenção**: Este script serve apenas para facilitar os testes. Para produção, deve ser utilizada a API oficial do Google. Mais informações podem ser encontradas na [documentação oficial da API Google My Business](https://developers.google.com/my-business/content/overview?hl=pt-br).
 
