@@ -6,8 +6,8 @@ import os
 # Esta função é usada para autenticar o cliente do Azure Text Analytics
 def authenticate_client():
     # Recuperando a chave e o endpoint do Azure Text Analytics das variáveis de ambiente
-    ta_key = os.getenv("AZURE_LANGUAGE_KEY")
-    ta_endpoint = os.getenv("AZURE_LANGUAGE_ENDPOINT")
+    ta_key = os.getenv("TEXT_ANALYTICS_KEY")
+    ta_endpoint = os.getenv("TEXT_ANALYTICS_ENDPOINT")
     
     # Criando uma instância de AzureKeyCredential com a chave recuperada
     ta_credential = AzureKeyCredential(ta_key)
